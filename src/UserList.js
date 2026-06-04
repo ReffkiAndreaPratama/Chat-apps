@@ -1,5 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
-import { collection, onSnapshot, query, doc } from "firebase/firestore";
+import { collection, onSnapshot, query } from "firebase/firestore";
 import { db } from "./firebase";
 
 export default function UserList({
