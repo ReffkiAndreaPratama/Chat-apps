@@ -4,12 +4,12 @@ import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDdp6JldZHpNraNvmkymtbiIgrScrZa9ew",
-  authDomain: "chat-app-a0dfa.firebaseapp.com",
-  projectId: "chat-app-a0dfa",
-  storageBucket: "chat-app-a0dfa.firebasestorage.app",
-  messagingSenderId: "704086836210",
-  appId: "1:704086836210:web:9934df35c7a1626004216b"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
 };
 
 export const app = initializeApp(firebaseConfig);
@@ -18,6 +18,3 @@ export const db = getFirestore(app);
 export const auth = getAuth(app);
 export const provider = new GoogleAuthProvider();
 export const storage = getStorage(app);
-
-// Messaging di-lazy load karena butuh service worker
-// Gunakan getMessagingInstance() dari messaging.js
